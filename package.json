@@ -5,7 +5,7 @@
     "scripts": {
         "start": "nodemon index.js",
         "dev": "netlify dev",
-        "build": "netlify build"
+        "build": "netlify deploy --prod"
     },
     "dependencies": {
         "cors": "^2.8.5",
