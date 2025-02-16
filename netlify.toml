@@ -1,0 +1,8 @@
+[build]
+  functions = "functions"
+  publish = "public"
+
+[dev]
+  functions = "functions"
+  command = "npm run dev"
+  port = 3000
