@@ -3,7 +3,7 @@
 
 [[redirects]]
   from = "/socket.io/*"
-  to = "/.netlify/functions/function"
+  to = "/functions/function"
   status = 200
   force = true
 
