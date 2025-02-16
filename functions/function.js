@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
-const { Handler } = require('@netlify/functions');
+const serverless = require("serverless-http");
 
 const app = express();
 const server = http.createServer(app);
@@ -86,15 +86,5 @@ io.on("connection", (socket) => {
     });
 });
 
-// Export handler function to make it compatible with Netlify
-exports.handler = async (event, context) => {
-    // Start server only if needed
-    server.listen(5005, () => {
-        console.log("Server is running on http://localhost:5005");
-    });
-
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'Server running' }),
-    };
-};
+module.exports = app;
+module.exports.handler = serverless(app);
